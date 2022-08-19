@@ -1,0 +1,57 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+<div class="container text-center">
+<div class="w-50">
+    {{ error }}
+    <div class="row">
+        <h1>Edit task</h1>
+
+        <div class="col">
+            <form method="POST">
+
+                <div class="form-group mb-3 text-start">
+                    <label for="name" class="mb-2">Name</label>
+                    <input name="name" class="form-control" id="name" required value="{{ task.name }}">
+                </div>
+
+                <div class="form-group mb-3 text-start">
+                    <label for="description" class="mb-2">Description</label>
+                    <textarea name="description" class="form-control" id="description"
+                              placeholder="Task's description (optional)">{{ todo.description }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="important">Important</label>
+                    <input name="important" class="form-check-input" type="checkbox" id="important" {% if task.important %}checked{% endif %}>
+                </div>
+
+<!--                <div class="form-group">-->
+<!--                    <label for="deadline">Deadline</label>-->
+<!--                    <input name="deadline" class="form-control" type="date" id="deadline"-->
+<!--                    value="{{ task.deadline }}" placeholder="{{ task.deadline }}">-->
+<!--                </div>-->
+                {% csrf_token %}
+                <!-- {{ form.as_p }} -->
+                <button type="submit" class="btn mt-2">Save changes</button>
+            </form>
+        </div>
+
+        <BR><BR>
+        <div class="col align-self-center">
+            <form method="POST" action="{% url 'done' task.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn mt-2">Mark as completed</button>
+            </form>
+
+            <BR><BR>
+            <form method="POST" action="{% url 'delete' task.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn mt-2">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends "todo/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up for a free ToDoApp account</title>
+</head>
+<body>
+{% block content %}
+<div class="container text-center">
+<div class="w-50">
+    <h1 class="mb-5 mt-5">Sign Up</h1>
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    <div class="form-group mb-3 text-start">
+        <form method="POST">
+
+            {{ form.as_p }}
+            {% csrf_token %}
+    </div>
+    <button type="submit" class="btn">Sign Up</button>
+    </form>
+</div>
+</div>
+</body>
+{% endblock %}
+</html>

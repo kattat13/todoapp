@@ -1,0 +1,31 @@
+{% extends "todo/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    Log in to ToDoApp
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+<div class="container text-center">
+<div class="w-50">
+    <h1 class="mt-5">Log In</h1>
+
+    <h2>{{error}}</h2>
+
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="btn">Log In</button>
+    </form>
+</div>
+
+
+</div>
+</div>
+</body>
+{% endblock %}
+</html>

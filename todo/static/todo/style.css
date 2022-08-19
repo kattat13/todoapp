@@ -1,0 +1,41 @@
+body {
+background-color: #cfaaee;
+}
+
+h1 {
+font-family: Helvetica; color: #000000;
+}
+
+
+.btn {
+--bs-btn-bg: #6935bd;
+--bs-btn-color: #ffffff;
+--bs-btn-hover-color: #ffffff;
+--bs-btn-hover-bg: #9055ed;
+--bs-btn-hover-border-color: #6935bd;
+--bs-btn-bg: #6935bd; --bs-btn-color: #ffffff;}
+
+.container {
+display: flex;
+justify-content: space-around;
+
+}
+
+.nav-pills a {
+    color: #9055ed; font-weight: bold; padding: 20px;
+    text-decoration: none;
+  border-bottom: 2px solid #9055ed;
+  box-shadow: inset 0 -4px 0 #6935bd;
+  color: inherit;
+  transition: background 0.1s cubic-bezier(.33,.66,.66,1);
+}
+
+.nav-pills a:hover { background: #9055ed; color: #ffffff; }
+
+#bootstrap-override-link {background-color: #cfaaee; text-decoration:none;
+}
+
+#bootstrap-override-link:hover {background-color: #9055ed; color: #ffffff;
+
+}
+
